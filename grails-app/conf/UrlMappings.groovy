@@ -8,6 +8,7 @@ class UrlMappings {
         }
 		
 		"/books"(resources: "book")
+		"/login"(resources: "loginApi")
 
         "/"(view:"/index")
         "500"(view:'/error')

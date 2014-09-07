@@ -8,8 +8,8 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class BookController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
+    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE", getBook: "POST"]
+	
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Book.list(params), model:[bookInstanceCount: Book.count()]
@@ -101,4 +101,5 @@ class BookController {
             '*'{ render status: NOT_FOUND }
         }
     }
+
 }
